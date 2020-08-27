@@ -6,7 +6,7 @@ import io.restassured.response.Response;
 import static io.restassured.RestAssured.*;
 import java.util.HashMap;
 
-public class GetRequest11 extends TestBase01 {
+public class GetRequest11 extends TestBase {
 	
 	/*
 	 GSON: GSON, 1) Json formatindaki data'lari Java Objectlerine donusturur. (De-Serialization) 

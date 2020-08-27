@@ -7,7 +7,7 @@ import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import static io.restassured.RestAssured.*;
 
-public class GetRequest06 extends TestBase01 {
+public class GetRequest06 extends TestBase {
   //TestBase class olusturup her testte kullanilan data'lari TestBase class'a koyup
   //tekrar tekrar ayni seyleri yazmaktan kurtulacagiz.
 	

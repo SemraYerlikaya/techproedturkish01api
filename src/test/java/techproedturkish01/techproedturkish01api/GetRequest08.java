@@ -8,7 +8,7 @@ import org.junit.Test;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 
-public class GetRequest08 extends TestBase01 {
+public class GetRequest08 extends TestBase {
 	
 	/*
 	 When I send a GET request to REST API URL

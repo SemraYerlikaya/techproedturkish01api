@@ -7,7 +7,7 @@ import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 
-public class PostRequest05 extends TestBase01 {
+public class PostRequest05 extends TestBase {
 	
 						/*
 								POST Scenario:

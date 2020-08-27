@@ -8,7 +8,7 @@ import io.restassured.response.Response;
 
 import static io.restassured.RestAssured.*;
 
-public class GetRequest07 extends TestBase01 {
+public class GetRequest07 extends TestBase {
 	
 	//Among the data there are someones whose first name is "Susan"
 	//URL spec01 from TestBase

@@ -9,7 +9,7 @@ import org.testng.asserts.SoftAssert;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 
-public class GetRequest09 extends TestBase01{
+public class GetRequest09 extends TestBase{
 	
 	@Test
 	public void get01() {
