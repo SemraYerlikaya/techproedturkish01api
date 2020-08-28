@@ -1,10 +1,15 @@
 package techproedturkish01.techproedturkish01api;
 
+import static io.restassured.RestAssured.given;
+
+import java.util.HashMap;
+
 import org.junit.Test;
 import org.testng.asserts.SoftAssert;
+
+import com.google.gson.Gson;
+
 import io.restassured.response.Response;
-import static io.restassured.RestAssured.*;
-import java.util.HashMap;
 
 public class GetRequest11 extends TestBase {
 	
@@ -23,7 +28,8 @@ public class GetRequest11 extends TestBase {
 				               get("/2");
 		response.prettyPrint();
 		
-		HashMap<String, String> map = response.as(HashMap.class);//De-Serialization 
+		//Json formatindaki data'yi Java Object'ini GSON kullanarak cevirme ==> De-Serialization
+		HashMap<String, String> map = response.as(HashMap.class); 
 		System.out.println(map);
 		
 		System.out.println(map.keySet());//[id, completed, title, userId]
@@ -34,18 +40,21 @@ public class GetRequest11 extends TestBase {
 		//'completed' key'sinin degerinin false oldugunu 'verify' ediniz
 		softAssert.assertEquals(map.get("completed"), false,"false olmaliydi ama degil");
 		
-		
 		//userId degerini verify ediniz.
-		softAssert.assertEquals(map.get("userId"), 1.0);
+		softAssert.assertEquals(map.get("userId"), 1);
 		
 		//id degerini verify ediniz.
-		softAssert.assertEquals(map.get("id"), 2.0);
+		softAssert.assertEquals(map.get("id"), 2);
 		
 		//title degerini verify ediniz.
 		softAssert.assertEquals(map.get("title"), "quis ut nam facilis et officia qui");
-		
 		softAssert.assertAll();
-	
+		
+		//Java Object'ini Json formatina cevirme ==> Serialization
+		Gson gson = new Gson();
+		String jsonFromMap = gson.toJson(map);
+		System.out.println(jsonFromMap);//{"id":2,"completed":false,"title":"quis ut nam facilis et officia qui","userId":1}
+		
 	}
 
 }

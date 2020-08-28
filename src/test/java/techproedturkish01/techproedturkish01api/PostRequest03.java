@@ -1,13 +1,8 @@
 package techproedturkish01.techproedturkish01api;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import org.junit.Test;
 import org.testng.asserts.SoftAssert;
 
-import static io.restassured.RestAssured.given;
-import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 

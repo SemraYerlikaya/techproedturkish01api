@@ -36,21 +36,7 @@ public class Delete01 extends TestBase {
 		              then().
 		              assertThat().
 		              statusCode(200);
-		
-		assertTrue(responseAfterDelete.getBody().asString().equals(null));
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+
 	}
 	
 }

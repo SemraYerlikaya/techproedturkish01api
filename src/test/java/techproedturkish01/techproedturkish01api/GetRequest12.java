@@ -30,7 +30,7 @@ public class GetRequest12 extends TestBase {
 		
         response.prettyPrint();
         
-        //How to convert Json into Java Object by using GSON
+        //Json formatindaki data'yi Java Object'ini GSON kullanarak cevirme ==> De-Serialization
         
         List<Map<String, Object>> listOfMapsByGson = response.as(ArrayList.class);
         
@@ -47,6 +47,12 @@ public class GetRequest12 extends TestBase {
         
         //Sondan bir onceki elemanin title'inin 'numquam repellendus a magnam' oldugunu verify ediniz
         softAssert.assertEquals(listOfMapsByGson.get(listOfMapsByGson.size()-2).get("title"), "numquam repellendus a magnam");
+        softAssert.assertAll();
+        
+        //Java Object'ini Json formatina cevirme.
+        Gson gson = new Gson();
+        String jsonFromList = gson.toJson(listOfMapsByGson);
+        System.out.println(jsonFromList);
 
 	}
 }
