@@ -2,10 +2,8 @@ package techproedturkish01.techproedturkish01api;
 
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertTrue;
-
 import org.hamcrest.Matchers;
 import org.junit.Test;
-
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 
@@ -53,6 +51,32 @@ public class AppTest{
 		   body("data.id", Matchers.hasSize(24)).
 		   body("data.employee_name", Matchers.hasItem("Ashton Cox")).
 		   body("data.employee_age",Matchers.hasItems("21", "61", "23"));
+	}
+    
+    @Test
+	public void delete01() {
+		
+		Response responseBeforeDelete = given(). 
+				                        when().
+				                          get("http://dummy.restapiexample.com/api/v1/employee/2");
+		responseBeforeDelete.prettyPrint();
+		
+		Response responseAfterDelete = given().
+				                       when().
+				                          delete("http://dummy.restapiexample.com/api/v1/delete/2");
+		responseAfterDelete.prettyPrint();
+		
+		Response getResponseAfterDelete = given().
+                                             when().
+                                             get("http://dummy.restapiexample.com/api/v1/employee/2");
+		getResponseAfterDelete.prettyPrint();
+		
+		
+		responseAfterDelete.
+		              then().
+		              assertThat().
+		              statusCode(200);
+
 	}
 
 }
