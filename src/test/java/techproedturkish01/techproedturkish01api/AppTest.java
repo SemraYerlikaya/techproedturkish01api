@@ -25,7 +25,7 @@ public class AppTest extends TestBase{
 		   get("https://restful-booker.herokuapp.com/booking").
 		then().
 		   assertThat().
-		   statusCode(203);	
+		   statusCode(200);	
 	}
     
     @Test
